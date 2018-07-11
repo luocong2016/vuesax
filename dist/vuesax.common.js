@@ -318,6 +318,7 @@ module.exports = function () { /* empty */ };
     el.addEventListener('mouseenter', mouseEnterx);
 
     var mousex = function mousex(event) {
+      if(!event) { return; }
       var coords = event.toElement.getBoundingClientRect();
       tooltipx.style.transform = "translateY(-90%)";
       tooltipx.style.opacity = '0';
