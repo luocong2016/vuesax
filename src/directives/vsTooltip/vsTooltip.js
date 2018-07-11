@@ -107,6 +107,7 @@ export default {
     el.addEventListener('mouseenter',mouseEnterx)
 
     var mousex = function(event){
+      if(!event) { return; }
       let coords = event.toElement.getBoundingClientRect();
       tooltipx.style.transform = `translateY(-90%)`
       tooltipx.style.opacity = '0'
