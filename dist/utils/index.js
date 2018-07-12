@@ -9,7 +9,10 @@ export default {
     let scrollTopx = window.pageYOffset || document.documentElement.scrollTop;
     if(elx.getBoundingClientRect().top + 300 >= window.innerHeight) {
       setTimeout( ()=> {
-        if(conditional){
+        if (content.$el == null) {
+          content.$el = content['__vue__'].$el;
+        }
+        if (conditional){
           topx = (elx.getBoundingClientRect().top - content.$el.clientHeight) + scrollTopx
         } else {
           topx = (elx.getBoundingClientRect().top - content.$el.clientHeight + elx.clientHeight) + scrollTopx
